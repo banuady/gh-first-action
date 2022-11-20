@@ -1,0 +1,20 @@
+# We need to give it a name to our workflow
+name: First Workflow
+
+# This specifies when this workflow will be triggered
+# There are many events GH can listen.
+# This particular one ensures we can manually trigger this workflow.
+on: workflow_dispatch
+
+# Next we define what work should be done - "jobs" is a keyword
+jobs:
+  # Here the job's name can be anything
+  first-job:
+    # First we need to define the runner where this job runs
+    runs-on: ubuntu-latest
+    # Then, we need to define the steps
+    steps:
+      - name: Print greeting
+        run: echo "Hello World"
+      - name: Print goodbye
+        run: echo "Done - bye!"
